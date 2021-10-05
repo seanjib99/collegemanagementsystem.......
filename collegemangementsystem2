@@ -1,0 +1,27 @@
+
+        self.cname=Entry(self.project,textvar=self.coursename, font=("goudy old style", 15, "bold"), bg="white").place(x=130, y=83)
+
+        duration_name_label = Label(self.project, text="Duration", font=("goudy old style", 15, "bold"), fg="#7307f7")
+        duration_name_label.place(x=0, y=120)
+
+        self.duration_entry = Entry(self.project,textvar=self.duration, font=("goudy old style", 15, "bold"), bg="white").place(x=130, y=120)
+
+        coursecredit_name_label = Label(self.project, text="Course Credit", font=("goudy old style", 15, "bold"), fg="#7307f7")
+        coursecredit_name_label.place(x=0, y=160)
+
+        self.credit_entry = Entry(self.project, textvar=self.coursecredit, font=("goudy old style", 15, "bold"), bg="white").place(x=130, y=157)
+
+        charges_name_label = Label(self.project, text="Charges", font=("goudy old style", 15, "bold"), fg="#7307f7")
+        charges_name_label.place(x=0, y=200)
+
+        self.charges_entry = Entry(self.project,textvar=self.charges, font=("goudy old style", 15, "bold"), bg="white").place(x=130, y=198)
+
+        description_name_label = Label(self.project, text="Description", font=("goudy old style", 15, "bold"), fg="#7307f7")
+        description_name_label.place(x=0, y=280)
+
+        self.description_entry = Entry(self.project, textvar=self.description,font=("goudy old style", 15, "bold"), bg="white").place(x=130, y=275)
+
+        coursehead_name_label = Label(self.project, text="Course Head", font=("goudy old style", 15, "bold"), fg="#7307f7")
+        coursehead_name_label.place(x=0, y=240)
+
+       
