@@ -1,0 +1,43 @@
+ if coursename=='' or duration=='' or coursehead=='' or charges=='' or coursecredit=='' or description=='':
+                messagebox.showerror("error","All field are required for add course")
+        else:
+            query="select * from new_table where course_name=%s"
+            values=(coursename,)
+            row=self.db.fetch(query,values)
+        if row !=None:
+            messagebox.showerror("error","Course name is already present",parent=self.project)
+        else:
+            queryone="Insert into new_table(course_name,duration,course_credit,charges,course_head,description) values(%s,%s,%s,%s,%s,%s)"
+            value=(coursename,duration,coursecredit,charges,coursehead,description)
+            self.db.add(queryone,value)
+            messagebox.showinfo("Success", "data add successfully",parent=self.project)
+            self.fetchdata()
+            self.clear()
+
+
+
+    def cursor(self,a):
+        coursor_row = self.course_table.focus()
+        data = self.course_table.item(coursor_row)
+        row = data['values']
+        self.courseid.set(row[0])
+        self.coursename.set(row[1])
+        self.duration.set(row[2])
+        self.coursecredit.set(row[3])
+        self.charges.set(row[4])
+        self.coursehead.set(row[5])
+        self.description.set(row[6])
+
+    def update_course(self):
+        coursename = self.coursename.get()
+        duration = self.duration.get()
+        coursecredit = self.coursecredit.get()
+        charges = self.charges.get()
+        coursehead = self.coursehead.get()
+        description = self.description.get()
+        courseid= self.courseid.get()
+        query="update new_table set course_name=%s,duration =%s, course_credit=%s, charges=%s, course_head=%s, description=%s where id=%s"
+        value=(coursename,duration,coursecredit,charges,coursehead,description,courseid)
+        self.db.update(query,value)
+        messagebox.showinfo("Success","Successfully update data",parent=self.project)
+        self.fetchdata()
